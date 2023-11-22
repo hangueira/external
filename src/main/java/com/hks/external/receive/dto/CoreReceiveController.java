@@ -16,8 +16,18 @@ public class CoreReceiveController {
         String chnlType = "BNK";
         HeadDto headDto = new HeadDto(ifId, chnlType);
 
-        TransFormDto resultTransFormDto = new TransFormDto(headDto);
-        return resultTransFormDto;
+        MainMsgDto mainMsgDto = MainMsgDto.builder()
+                .outp_msg_cd("0000000000")
+                .coutp_msg_ctnt("정상 조회되었습니다.").build();
+
+        MsgDto msgDto = MsgDto.builder()
+                .msg_dvcd("NM")
+                .main_Msg(mainMsgDto).build();
+
+        return TransFormDto.builder()
+                .headDto(headDto)
+                .msgDto(msgDto)
+                .build();
     }
 
     @PostMapping("/headReceive")
