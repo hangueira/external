@@ -1,5 +1,9 @@
-package com.hks.external.receive.dto;
+package com.hks.external.receive;
 
+import com.hks.external.receive.dto.HeadDto;
+import com.hks.external.receive.dto.MainMsgDto;
+import com.hks.external.receive.dto.MsgDto;
+import com.hks.external.receive.dto.TransFormDto;
 import lombok.Data;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
